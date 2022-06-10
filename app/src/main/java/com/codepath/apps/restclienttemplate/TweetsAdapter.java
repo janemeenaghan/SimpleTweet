@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     //pass in context + list of tweets thru constructor
     Context context;
     List<Tweet> tweets;
+    ImageView tweetImage;
     public TweetsAdapter(Context context, List<Tweet> tweets){
         this.context = context;
         this.tweets = tweets;
@@ -72,6 +74,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            tweetImage = itemView.findViewById(R.id.tweetPic);
 
         }
 
@@ -79,6 +82,17 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
+            if (!tweet.image.equals("")){
+                tweetImage.setVisibility(View.VISIBLE);
+                Glide.with(context)
+                        .load(tweet.image)
+                        .centerCrop()
+                        .transform(new RoundedCorners(75))
+                        .into(tweetImage);
+            }
+            else{
+                tweetImage.setVisibility(View.GONE);
+            }
         }
     }
 }

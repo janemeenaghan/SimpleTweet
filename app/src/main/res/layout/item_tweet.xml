@@ -38,4 +38,14 @@
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         android:text="sample 2" />
+
+    <ImageView
+        android:id="@+id/tweetPic"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/ivProfileImage"
+        tools:srcCompat="@tools:sample/avatars" />
 </RelativeLayout>
