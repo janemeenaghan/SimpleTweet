@@ -23,11 +23,17 @@ public class Tweet {
         tweet.createdAt = jsonObject.getString("created_at");
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
 
-        if(!jsonObject.isNull("extended_entities")){
-            JSONObject extendedEntities = jsonObject.getJSONObject("extended_entities");
-            JSONArray jsonArray = extendedEntities.getJSONArray("media");
-            JSONObject media = jsonArray.getJSONObject(0);
-            tweet.image = String.format("%s:large", media.getString("media_url_https"));
+        if(!jsonObject.isNull("entities")){
+            JSONObject extendedEntities = jsonObject.getJSONObject("entities");
+            if(extendedEntities.has("media"))
+            {
+                JSONArray jsonArray = extendedEntities.getJSONArray("media");
+                JSONObject media = jsonArray.getJSONObject(0);
+                tweet.image = media.getString("media_url");
+            }
+            else
+                tweet.image="";
+            //String.format("%s:large", media.getString("media_url_https"));
         }
         else{
             tweet.image = "";

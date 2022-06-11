@@ -86,9 +86,10 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             }
             else{
                 tweetImage.setVisibility(View.VISIBLE);
+                Log.d("jane","tweet="+tweet.body+" " + tweet.image);
                 Log.d("TweetsAdapter", "loading media");
-                Glide.with(context).
-                        load(tweet.image)// + ":thumb")
+                Glide.with(context)
+                        .load(tweet.image)// + ":thumb")
                         .into(tweetImage);
             }
 
