@@ -47,7 +47,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/janemeenaghan/SimpleTweet/blob/2d058446d780a4c34558ae300387cb6663ae64b8/FINAL%20EZGIF%20PROJECT%202.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/janemeenaghan/SimpleTweet/blob/a2072bdf7d08207eb9f780497bc192f96074802a/FINAL%20EZGIF%20PROJECT%202.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [ezgif](https://ezgif.com/video-to-gif/).
 
