@@ -69,17 +69,22 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     //define viewholder
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView ivProfileImage;
-        TextView tvBody, tvScreenName;
+        TextView tvBody, tvScreenName,relativeTime;
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             tweetImage = itemView.findViewById(R.id.tweetPic);
-
+            relativeTime = itemView.findViewById(R.id.relativeTime);
         }
 
         public void bind(Tweet tweet) {
+          /*  Log.d("WHYISNTITWORKING", tweet.getRelativeTimeAgo(tweet.createdAt));
+            Log.d("WHYISNTITWORKING", tweet.getRelativeTimeAgo(tweet.createdAt));
+            Log.d("WHYISNTITWORKING", tweet.getRelativeTimeAgo(tweet.createdAt));
+            Log.d("WHYISNTITWORKING", tweet.getRelativeTimeAgo(tweet.createdAt));
+            Log.d("WHYISNTITWORKING", tweet.getRelativeTimeAgo(tweet.createdAt));*/
             Log.d("TweetsAdapter", tweet.image + "");
             if (tweet.image.isEmpty()) {
                 tweetImage.setVisibility(View.GONE);
@@ -95,6 +100,9 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
+             relativeTime.setText(tweet.getRelativeTimeAgo(tweet.createdAt));
+
+
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
             /*if (tweet.image.isEmpty()){
                 tweetImage.setVisibility(View.GONE);

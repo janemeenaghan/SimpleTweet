@@ -6,6 +6,9 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
+        <item name="colorPrimary">#4d1da1f2</item>
+        <item name="colorPrimaryDark">#ffaab8c2</item>
+        <item name="colorAccent">#ff1370a9</item>
     </style>
 
     <!-- Application theme. -->
