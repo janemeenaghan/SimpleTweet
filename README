@@ -54,7 +54,7 @@ GIF created with [ezgif](https://ezgif.com/video-to-gif/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-
+Three teachers, Chris, Sisi, and Jason, all worked together and could not resolve a bug with my embedded images in the final step of the required features. Sisi told me he is familiar with the issue, that it has to do either Twitter API or Android, and that my code is correct. I was instructed by the teachers to let you know about this and consider this in grading.
 ## Open-source libraries used
 
 * [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
