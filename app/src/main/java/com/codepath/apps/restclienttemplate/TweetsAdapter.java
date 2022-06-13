@@ -23,7 +23,6 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     //pass in context + list of tweets thru constructor
     Context context;
     List<Tweet> tweets;
-    ImageView tweetImage;
     public TweetsAdapter(Context context, List<Tweet> tweets){
         this.context = context;
         this.tweets = tweets;
@@ -70,6 +69,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView ivProfileImage;
         TextView tvBody, tvScreenName,relativeTime;
+        ImageView tweetImage;
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
